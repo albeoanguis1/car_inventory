@@ -11,6 +11,7 @@
 
   </head>
   <body>
+    <!-- Navbar-->  
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
         <div class="container">
             <a href="" class="navbar-brand">Car Inventory</a>
@@ -18,8 +19,8 @@
                 class="navbar-toggler" 
                 type="button" 
                 data-bs-toggle="collapse" 
-                data-bs-target="#navmenu"
-            ><span class="navbar-toggler-icon"></span></button>
+                data-bs-target="#navmenu">
+            <span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -41,6 +42,10 @@
             </div>
         </div>
     </nav>
+    <!--Jinja STuff goes here-->
+    {% block content %}
+    {% endblock %}
+
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 
