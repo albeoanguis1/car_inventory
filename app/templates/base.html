@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Car Inventory</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,7 +15,7 @@
     <!-- Navbar-->  
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
         <div class="container">
-            <a href="/" class="navbar-brand">Car Inventory</a>
+            <a href="" class="navbar-brand">Car Inventory</a>
             <button 
                 class="navbar-toggler" 
                 type="button" 
@@ -25,20 +25,24 @@
             <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href="/" class="nav-link">Home</a>
+                        <a href="{{ url_for('site.home') }}" class="nav-link">Home</a>
+                    </li>
+                    
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item">
+                        <a href="{{ url_for('site.profile') }}" class="nav-link">Garage</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/garage" class="nav-link">Garage</a>
+                        <a href="{{ url_for('auth.logout') }}" class="nav-link">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a href="{{ url_for('auth.signin') }}" class="nav-link">Sign In</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/logout" class="nav-link">Logout</a>
+                        <a href="{{ url_for('auth.signup') }}" class="nav-link">Sign Up</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="/signin" class="nav-link">Sign In</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/signup" class="nav-link">Sign Up</a>
-                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
